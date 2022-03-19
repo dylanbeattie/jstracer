@@ -52,6 +52,8 @@ export class Color extends Material {
         if (values = /rgba\(([\d]+),([\d]+),([\d]+),([\d]+|[\d]*.[\d]+)\)/.exec(str)) return [+values[1], +values[2], +values[3], +values[4]];
         // Checks for rgb and converts string to integer/float using unary + operator to save bytes
         if (values = /rgb\(([\d]+),([\d]+),([\d]+)\)/.exec(str)) return [+values[1], +values[2], +values[3]];
-        else return [];
+        else throw Error(`Invalid color: ${str}`);
     }
+    
+    toString = () => `rgb(${this.r},${this.g},${this.b})`;
 }

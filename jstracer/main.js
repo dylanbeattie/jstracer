@@ -1,7 +1,7 @@
 import { Camera, Scene, Tracer, Vector, Color } from './modules/tracer.js';
 
 let camera = new Camera(new Vector(-4, 1, -5), new Vector(0, 1, 0));
-let background = new Color(50, 100, 250);
+let background = new Color(120, 150, 255);
 let scene = new Scene(camera, background);
 let canvas = document.getElementById('my-canvas');
 let ctx = canvas.getContext('2d');
