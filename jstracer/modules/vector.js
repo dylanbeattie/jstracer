@@ -1,10 +1,18 @@
 export class Vector {
+    #x = 0;
+    #y = 0;
+    #z = 0;
+
     constructor(x, y, z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+        this.#x = x;
+        this.#y = y;
+        this.#z = z;
         this.len = Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
     }
+
+    get x() { return this.#x; }
+    get y() { return this.#y; }
+    get z() { return this.#z; }
 
     /** the unit X vector <1,0,0> */
     static X = new Vector(1, 0, 0);
