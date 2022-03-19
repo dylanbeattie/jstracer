@@ -1,7 +1,7 @@
 export class Scene {
-    constructor(camera, shapes) {
+    constructor(camera, background) {
         this.camera = camera;
-        this.shapes = shapes ?? [];
+        this.background = background;
     }
     trace = (x, y) => this.camera.trace(this, x, y).clip();
 }
