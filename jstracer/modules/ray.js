@@ -1,3 +1,6 @@
+import { MAX_DEPTH } from './settings.js';
+import { Color } from './material.js';
+
 export class Ray {
     constructor(start, direction) {
         this.start = start;
