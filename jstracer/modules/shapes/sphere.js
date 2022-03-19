@@ -1,16 +1,4 @@
-import { THRESHOLD } from './settings.js';
-
-class Shape {
-    constructor(material) {
-        this.material = material;
-    }
-    findIntersections = ray => [];
-    closestDistanceAlongRay = (ray) => {
-        var intersections = this.findIntersections(ray).filter(distance => distance > THRESHOLD);
-        return Math.min.apply(Math, intersections);
-    }
-    getColorAt = (point, direction, scene, depth) => this.material.getColorAt(point);
-}
+import { Shape } from '../shape.js';
 
 export class Sphere extends Shape {
     constructor(center, radius, material) {

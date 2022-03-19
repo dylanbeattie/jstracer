@@ -1,7 +1,10 @@
+import { Color } from './material.js';
+
 export class Scene {
-    constructor(camera, background) {
+    constructor(camera, shapes, background) {
         this.camera = camera;
-        this.background = background;
+        this.shapes = shapes ?? [];
+        this.background = background ?? Color.Black;
     }
     trace = (x, y) => this.camera.trace(this, x, y).clip();
 }
