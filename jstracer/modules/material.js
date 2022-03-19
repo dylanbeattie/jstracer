@@ -62,6 +62,6 @@ export class Color extends Material {
         return new Color(rr, gg, bb);
     }
     scale = (factor) => new Color(this.r * factor, this.g * factor, this.b * factor);
-    
+
     toString = () => `rgb(${this.r},${this.g},${this.b})`;
 }

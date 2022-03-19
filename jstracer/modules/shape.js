@@ -1,5 +1,4 @@
 import { THRESHOLD } from './settings.js';
-import { Ray } from './ray.js';
 import { Color } from './material.js';
 
 export class Shape {
@@ -13,11 +12,11 @@ export class Shape {
     }
     getColorAt = (point, scene) => {
         let materialColor = this.material.getColorAt(point);
-        let colorToReturn = materialColor.scale(0);
+        let colorToReturn = Color.Black;
         let normal = this.getNormalAt(point);
         scene.lights.forEach(light => {
-            let lightDirection = light.position.add(point.invert()).normalize();
-            let brightness = normal.dot(lightDirection);
+            let direction = light.position.add(point.invert()).normalize();
+            let brightness = normal.dot(direction);
             if (brightness > 0) {
                 let illumination = materialColor.multiply(light.color).scale(brightness);
                 colorToReturn = colorToReturn.add(illumination);
