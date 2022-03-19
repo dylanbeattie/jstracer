@@ -8,6 +8,7 @@ let lights = [
   new Light(new Vector(-5, 5, -10), Color.White)
 ];
 let shapes = [
+  new Sphere(new Vector(1, 2, -1), 0.2, Color.White),
   new Sphere(new Vector(0, 1, 0), 1, new Color("#f00")),
   new Sphere(new Vector(2, 1, 0), 1, new Color("#0f0")),
   new Sphere(new Vector(4, 1, 0), 1, new Color("#00f"))
